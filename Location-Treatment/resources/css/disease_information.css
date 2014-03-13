@@ -1,0 +1,11 @@
+.disease_info
+{
+	margin:20px 25px;
+	background:white;
+	text-align:justify
+}
+.disease_info_li
+{
+	list-style-type:square;
+	margin-top:5px
+}

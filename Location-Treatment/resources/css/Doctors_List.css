@@ -1,0 +1,20 @@
+.initial_design
+{
+	background:#006699;
+	height:40px;
+	color:white;
+}
+.btn_list
+{
+	height:40px;
+	border-right:2px solid grey;
+	color:white;
+	border-bottom:4px solid blue;
+	padding:10px 30px
+}
+.btn_map
+{
+	height:40px;
+	padding:10px 30px;
+	color:white
+}

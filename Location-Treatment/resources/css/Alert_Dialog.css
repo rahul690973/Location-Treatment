@@ -1,0 +1,70 @@
+.structure
+{
+	height:200px;
+	width:300px
+}
+.alert_timings
+{
+	font-weight:bold;
+	font-size:20px;
+	background:#005C8A;
+	color:white;
+	padding:10px;
+	padding-left:50px
+}
+.alert_timings_span
+{
+	margin-left:45px;
+	position:relative;
+	top:0px
+}
+.alert_timings_content
+{
+	background:white;
+	padding:10px
+}
+.alert_timings_button
+{
+	font-weight:bold;
+	font-size:20px;
+	background:#005C8A;
+	color:white;
+	padding:10px;
+	padding-left:0px
+}
+.alert_contacts
+{
+	font-weight:bold;
+	font-size:20px;
+	background:#005C8A;
+	color:white;
+	padding:10px;
+	padding-left:50px
+}
+.alert_contacts_span
+{
+	margin-left:45px;
+	position:relative;
+	top:0px
+}
+.alert_contacts_content1
+{
+	background:white;
+	padding:10px;
+}
+.alert_contacts_content2
+{
+	background:white;
+	padding:10px;
+	border-top:5px solid #005c8a 
+}
+.alert_contacts_button
+{
+	background-color:#006699;
+	font-weight:bold;
+	font-size:20px;
+	
+	color:white;
+	padding:10px;
+	padding-left:0px
+}
