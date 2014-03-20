@@ -5,37 +5,40 @@ Ext.define("screenshots.controller.Main",
     	{
     		refs:
     			{
-    			location:'#location',
-          reviews:'#reviews',
-          review:'#review',
     			list:'#mainlist',
           find:'#find',
           discuss:'#discuss',
-          timings:'#timings'	,
-          call:'#call',
           appoint:'#appoint',
           special:'#special',
           map:'#map',
           list_menu:'#list',
           normal:'#normal',
-          reviewclick:'#reviewclick'
+          homePage:'homepage',
+          otherView:'disease_information',
+          about_back:'#about_back',
+          symptoms_back:'#symptoms_back',
+          treatment_back:'#treatment_back',
+          discussion_back:'#discussion_back',
+          map_back:'#map_back',
+          register_doctor:'#register_doctor',
+          clinic_back:'#clinic_back',
+          clinic_back1:'#clinic_back1',
+          list_back:'#list_back',
+          clinicdetails_continue:'#clinicdetails_continue',
+     //     homepage_menu:'#homepage_menu'
     			},
 
 
     		control:
     			   {
+                    homePage: {
+                showOtherViewCommand: "onShowOtherView"
+            },
       			       location:
                       {
                         tap:'onTap'
                       },
-                    reviews:
-                      {
-                       tap:'onReviews'
-                      },  
-                    review:
-                      {
-                    tap:'onReview'
-                      },
+                  
                       list:
                       {
                         itemtap:'listItemTap'
@@ -48,14 +51,7 @@ Ext.define("screenshots.controller.Main",
                       {
                         tap:'Discuss'
                       },
-                      timings:
-                      {
-                        tap:'Timings'
-                      },
-                      call:
-                      {
-                        tap:'Call'
-                      },
+                    
                       appoint:
                       {
                         tap:'Appoint'
@@ -76,24 +72,111 @@ Ext.define("screenshots.controller.Main",
                       {
                         tap:'Normal'
                       },
-                      reviewclick:
+                      treatment_back:
                       {
-                        tap:'ReviewClick'
+                        tap:'back_to_homepage'
+                      },
+                      symptoms_back:
+                      {
+                        tap:'back_to_homepage'
+                      },
+                      about_back:
+                      {
+                        tap:'back_to_homepage'
+                      },
+                      discussion_back:
+                      {
+                        tap:'back_to_disease_information'
+                      },
+                      map_back:
+                      {
+                        tap:'back_to_doctors_list'
+                      },
+                      homepage_menu:
+                      {
+                        tap:'Homepage_Menu'
+                      },
+                      register_doctor:
+                      {
+                        tap:'Register_Doctor'
+                      },
+                      clinic_back:
+                      {
+                        tap:'Clinic_Back'
+                      },
+                       clinic_back1:
+                      {
+                        tap:'Clinic_Back1'
+                      },
+                     
+                      clinicdetails_continue:
+                      {
+                        tap:'ClinicDetails_Continue'
+                      },
+                      list_back:
+                      {
+                        tap:'List_Back'
                       }
 
-                			
-                			
+                    
                 	},
+             
                 	},
+      List_Back:function()
+      {
+         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Disease_Information'));
+      },
+      Clinic_Back:function()
+      {
+         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.HomePage'));
+      screenshots.view.sidebar.setMenu();
+      },
+      Clinic_Back1:function()
+      {
+         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.ClinicDetails'));
+    
+      },
+      ClinicDetails_Continue:function()
+      {
+        Ext.Viewport.setActiveItem(Ext.create('screenshots.view.ClinicDetails1'));    
+      },
+      Register_Doctor:function()
+      {
+         Ext.Viewport.toggleMenu('left'); 
+       Ext.Viewport.setActiveItem(Ext.create('screenshots.view.ClinicDetails'));      
+      },
+           
+      back_to_doctors_list:function()
+      {
+         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Doctors_List'));    
+      },
+
+      back_to_homepage:function()
+      {
+          Ext.Viewport.setActiveItem(Ext.create('screenshots.view.HomePage'));   
+      },
+
+       back_to_disease_information:function()
+      {
+          Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Disease_Information'));   
+      },
+
       Normal:function()
       {
         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.HomePage'));   
       },
 
+      Homepage_Menu:function()
+      {
+      Ext.Viewport.setActiveItem(Ext.create('screenshots.view.sidebarMain'));
+      screenshots.view.sidebar.setMenu();
+       
+      },
+
       Map:function()
       {
-     Ext.Viewport.setActiveItem(Ext.create('screenshots.view.mapMain'));
-    screenshots.view.map.setMenu();
+      Ext.Viewport.setActiveItem(Ext.create('screenshots.view.mapMain'));
+      screenshots.view.map.setMenu();
       },
 
       List:function()
@@ -103,7 +186,9 @@ Ext.define("screenshots.controller.Main",
 
       Special:function()
       {
+        
         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Special'));      
+        screenshots.view.sidebar.setMenu();
       },
 
       Find:function()
@@ -121,197 +206,10 @@ Ext.define("screenshots.controller.Main",
         Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Discussion_Forum'));      
       },
 
-      Timings:function()
+      listItemTap:function()
       {
-        var panel = Ext.create('Ext.Panel', {
-        centered : true,
-        cls:'structure',
-        layout:'vbox',
-   
-        items:
-          [
-              {
-              xtype:'label',
-              html:'<div><span >Timings</span></div>',
-              cls:'alert_timings',
-              flex:2
-              },
-              {
-              xtype:'panel',
-              cls:'alert_timings_content',
-              html:'<div>Mon-Fri: 9 AM to 11 PM</div><div >Sat-Sun: 11 AM to 11 PM</div>',
-              flex:5
-              },
-              {
-              xtype:'button',
-              html:'Close',
-              ui:'plain',
-              style:'background:#006699;color:white',
-              flex:2,
-              handler:function(button,event)
-                    { 
-                       panel.hide();
-                     }
-               }
-          ]
-        });
-        Ext.Viewport.add(panel);
-        panel.show();
-      },
-
-      
-      Call:function()
-      {
-        var panel = Ext.create('Ext.Panel', {
-        centered : true,
-        cls:'structure',
-        layout:'vbox',
-  
-         items:
-            [
-                {
-                xtype:'label',
-                html:'<div><span class="alert_contacts_span">Contact</span></div>',
-                cls:'alert_contacts',
-                flex:3
-                },
-                {
-                xtype:'panel',
-                cls:'alert_contacts_content1',
-                html:'+91-8870512503',
-                flex:2
-                },
-                {
-                xtype:'label',
-                html:'+91-8124379096',
-                cls:'alert_contacts_content2',
-                flex:2
-                },
-                {
-                xtype:'button',
-                html:'Close',
-                ui:'plain',
-                cls:'alert_contacts_button',
-                flex:3,
-                style:'background:#006699',
-                handler:function(button,event)
-                    {
-                      panel.hide();
-                    }
-                }
-             ]
-          });
-        Ext.Viewport.add(panel);
-        panel.show();     
-      },
-
-    	onTap:function()
-      {
-          new Ext.MessageBox().show({
-              title: '<div ><span>Location</span></div>',
-              message:'<div style="font-size:15px">Opposite Brookefields,Near Cosmos Mall, Whitefield, ITPL Main Road Satya Sai Arcad</div>',
-              scope: this,
-              style:'padding:0px !imp',
-
-              
-              buttons : [
-                 {
-                   itemId : 'yes',
-                   text   : 'Ok'
-                 },
-                 {
-                     itemId : 'no',
-                     text   : 'Show Map'
-                   }
-                 ],
-              fn: function(btn) {
-                if (btn == 'yes'){
-                     }
-                else if(btn=='no')
-                  {
-             
-                  }
-                  
-               }
-            });
-      },
-        ReviewClic:function()
-      {
-          new Ext.MessageBox().show({
-              title: '<div ><span>Reviews</span></div>',
-              message:'<div><img src="resources/images/reve.png" style="height:40px;width:150px"/></div>',
-              scope: this,
-              style:'padding:0px !imp',
-
-              
-              buttons : [
-                 {
-                   itemId : 'yes',
-                   text   : 'Submit',
-                   style:'1px'
-                 },
-                 {
-                     itemId : 'no',
-                     text   : 'Submit and Share'
-                   }
-                 ],
-              fn: function(btn) {
-                if (btn == 'yes'){
-                     }
-                else if(btn=='no')
-                  {
-             
-                  }
-                  
-               }
-            });
-      },
-      ReviewClick:function()
-      {
-     var panel = Ext.create('Ext.Panel', {
-    centered : true,
-    style:'height:180px;width:300px',
-    layout:'vbox',
-   //html:"<div style='width:300px;height:200px;background:red'></div>",
-   items:
-   [
-    {
-      xtype:'label',
-      html:'<span style="margin-left:40px">Review</span>',
-      style:'font-weight:bold;font-size:20px;background:#005C8A;color:white;padding:10px;padding-left:60px',
-      flex:2
-    },
-    {
-      xtype:'panel',
-      html:'<img src="resources/images/rev.png"/>',
-      flex:4,
-      style:'padding: 25px 50px'
-    },
-    {
-      xtype:'button',
-      ui:'plain',
-      html:'Submit',
-      style:'font-weight:bold;font-size:20px;background:#005C8A;color:white;padding:10px;',
-      flex:2,
-      handler:function(button,event)
-      {
-        panel.hide();
+        Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Disease_Information'));
       }
-    }
-   ]
-    
-});
-
-Ext.Viewport.add(panel);
-
-panel.show({
-   // type        : 'pop',
-    //isComponent : true
-}); },
-listItemTap:function()
-{
-  Ext.Viewport.setActiveItem(Ext.create('screenshots.view.Disease_Information'));
-}
 
 
    

@@ -89,7 +89,7 @@ Ext.define('screenshots.view.calendar', {
 
 	;
 	me.calendarPanel = Ext.create('Ext.Panel',{
-        html:'<img src="resources/images/images.jpg" style="width:90%;margin:5%;height:70%"/>'
+        html:'<img src="resources/images/calendar.png" style="width:90%;margin:5%;height:70%"/>'
 	    //html : "<div id='"+me.getPlaceholderid()+"'></div>"    
 	});
 	this.setItems([me.topToolBar,me.bottomToolBar,me.calendarPanel])
