@@ -117,16 +117,16 @@ Ext.define('screenshots.view.doctor', {
                         flex:1
                     },
 
-                   /* {
+                    {
                         xtype:'button',
-                        id:'location',
+                        id:'timings',
                         flex:2,
                         ui:'plain',
                         style:'height:50px;background:url("resources/images/icons/timings.png");background-repeat:no-repeat'
-                    },*/
+                    },
                     {
                         xtype:'button',
-                        id:'location',
+                        
                         flex:2,
                         ui:'plain',
                         style:'position:relative;top:4px;left:4px;height:50px;background:url("resources/images/icons/place.png");background-repeat:no-repeat'

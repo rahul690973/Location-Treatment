@@ -7,11 +7,10 @@
 .btn_list
 {
 	height:40px;
-	
+	border-right:2px solid grey;
 	color:white;
-	
-	padding:10px 30px;
-	
+	border-bottom:4px solid blue;
+	padding:10px 30px
 }
 .btn_map
 {

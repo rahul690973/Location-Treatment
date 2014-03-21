@@ -18,11 +18,11 @@ Ext.application({
     ],
 
     views: [
-        'Main','ClinicDetails','ClinicDetails1','Doctors_List_Sidebar','sidebar','sidebarMain','doctor','Doctors_List','Special','Disease_Information','Individual_Doctor','speciallist','HomePage','listtime','list','time','calendar','map',
+        'Main','doctor','Doctors_List','Special','Disease_Information','Individual_Doctor','speciallist','HomePage','listtime','list','time','calendar','map',
     ],
     models:['list','listtime','special','normal_disease_list'],
     stores:['list','listtime','special','normal_disease_list'],
-    controllers:['Main','ShowTimings','Call','ShowReviews','ShowLocation'],
+    controllers:['Main'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -48,10 +48,7 @@ Ext.application({
 
         // Initialize the main view
         
-  //       Ext.Viewport.add(Ext.create('screenshots.view.sidebarMain'));
-  Ext.Viewport.setActiveItem(Ext.create('screenshots.view.HomePage'));
-      screenshots.view.sidebar.setMenu();
-      
+         Ext.Viewport.add(Ext.create('screenshots.view.HomePage'));
     //screenshots.view.map.setMenu();
     },
 

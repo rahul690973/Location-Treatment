@@ -6,31 +6,18 @@ Ext.define('screenshots.view.mapMain', {
             {   
                 docked: 'top',
                 xtype: 'toolbar',
-                layout:'hbox',
-                items:
-                [
-                    {
-                        xtype:'button',
-                        iconCls:'arrow_left',
-                        flex:1,
-                        style:'margin:10px 10px',
-                        id:'map_back'
-                    },
-                    {
-                        xtype:'label',
-                        html:"<div style='padding:13px 5px'>Hospitals NearBy</div>",
-                        flex:6,
-                    },
-                    {
+                title: '<div style="margin-left:30px">Hospitals Near You</div>',
+                items: [{
                         xtype: 'button',
                         html:'Filter',
-                        flex:2,
-                       
+                        //iconCls: 'more',
+						//iconMask: true,
                         handler: function() {
-                            Ext.Viewport.toggleMenu('right');
+                            Ext.Viewport.toggleMenu('left');
                         }
-                    }              ]
-              
+                    },{
+                        xtype: 'spacer'
+                    },]
             },{
 				html: '<div><img src="resources/images/map.png"/></div>'
 			}
