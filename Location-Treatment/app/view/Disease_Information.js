@@ -44,7 +44,22 @@ Ext.define('screenshots.view.Disease_Information', {
                             [
                                 {
                                     xtype:'titlebar',
-                                    title:'About'
+                                    layout:'hbox',
+                                    items:
+                                    [
+                                        {
+                                            xtype:'button',
+                                            iconCls:'arrow_left',
+                                            flex:1,
+                                            style:'margin:0px 10px',
+                                            id:'about_back'
+                                        },
+                                        {
+                                            xtype:'label',
+                                            html:'<div style="margin-left:50px">About</div>',
+                                            flex:3
+                                        }
+                                    ]
                                 }
                             ],
 
@@ -57,7 +72,22 @@ Ext.define('screenshots.view.Disease_Information', {
                             [
                                 {
                                     xtype:'titlebar',
-                                    title:'Symptoms'
+                                    layout:'hbox',
+                                    items:
+                                    [
+                                        {
+                                            xtype:'button',
+                                            iconCls:'arrow_left',
+                                            flex:1,
+                                            style:'margin:0px 10px',
+                                            id:'symptoms_back'
+                                        },
+                                        {
+                                            xtype:'label',
+                                            html:'<div style="margin-left:50px">Symptoms</div>',
+                                            flex:3
+                                        }
+                                    ]
                                 }
                             ],
 
@@ -72,7 +102,22 @@ Ext.define('screenshots.view.Disease_Information', {
                             [
                                 {
                                     xtype:'titlebar',
-                                    title:'Treatment'
+                                     layout:'hbox',
+                                    items:
+                                    [
+                                        {
+                                            xtype:'button',
+                                            iconCls:'arrow_left',
+                                            flex:1,
+                                            style:'margin:0px 10px',
+                                            id:'treatment_back'
+                                        },
+                                        {
+                                            xtype:'label',
+                                            html:'<div style="margin-left:50px">Treatment</div>',
+                                            flex:3
+                                        }
+                                    ]
                                 }
                             ]
                         }

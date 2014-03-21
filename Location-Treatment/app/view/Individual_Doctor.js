@@ -126,7 +126,7 @@ Ext.define('screenshots.view.Individual_Doctor', {
                     },
                     {
                         xtype:'button',
-                        
+                        id:'location',
                         flex:2,
                         ui:'plain',
                         style:'position:relative;top:4px;left:4px;height:50px;background:url("resources/images/icons/place.png");background-repeat:no-repeat'

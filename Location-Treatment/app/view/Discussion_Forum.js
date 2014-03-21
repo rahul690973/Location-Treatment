@@ -11,7 +11,29 @@ Ext.define('screenshots.view.Discussion_Forum', {
             {
                 xtype:'titlebar',
                 docked:'top',
-                html:'<div class="discussion_forum_titlebar"><span>Discussion</span><img src="resources/images/edit.png" style="float:right;margin-right:20px;padding-bottom:7px;margin-bottom:8px" width="40px" height="40px"/></div>'
+                layout:'hbox',
+                style:'width:100%;',
+                items:
+                [
+                    {
+                        xtype:'button',
+                        iconCls:'arrow_left',
+                        flex:6,
+                        style:'margin:0px 10px',
+                        id:'discussion_back'
+                    },
+                    {
+                        xtype:'label',
+                        html:'<div style="margin-right:100px;margin-left:30px">Discussion</div>',
+                        flex:30
+                    },
+                    {
+                        xtype:'panel',
+                        html:'<img style="margin-top:6px" width="40px" height="36px" src="resources/images/thread2.png"/>',
+                        flex:10,
+                    },
+                ]
+                //html:'<div class="discussion_forum_titlebar"><span>Discussion</span><img src="resources/images/edit.png" style="float:right;margin-right:20px;padding-bottom:7px;margin-bottom:8px" width="40px" height="40px"/></div>'
             },
             {
                 xtype:'textfield',

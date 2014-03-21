@@ -9,8 +9,9 @@
 	font-size:20px;
 	background:#005C8A;
 	color:white;
-	padding:10px;
-	padding-left:50px
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .alert_timings_span
 {
@@ -45,18 +46,21 @@
 {
 	margin-left:45px;
 	position:relative;
-	top:0px
+	top:0px;
+	text-align: center
 }
 .alert_contacts_content1
 {
 	background:white;
-	padding:10px;
+	padding-top:20px;
+	padding-left: 10px;
 }
 .alert_contacts_content2
 {
 	background:white;
-	padding:10px;
-	border-top:5px solid #005c8a 
+	padding-top:20px;
+	padding-left: 10px;
+	border-top:3px solid #005c8a 
 }
 .alert_contacts_button
 {

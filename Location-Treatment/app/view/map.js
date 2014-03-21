@@ -11,6 +11,11 @@ Ext.define('screenshots.view.map', {
 			side: 'left',
 			reveal: true
 		});
+        Ext.Viewport.setMenu(this.createMenu('right'), {
+            side: 'right',
+            reveal: true
+        });
+
 
 		
     },

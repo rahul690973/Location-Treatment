@@ -19,10 +19,29 @@ Ext.define('screenshots.view.Special', {
                 xtype:'speciallist',
                 style:'width:100%;height:100%;position:relative;top:-30px'
             },
-            {
-                xtype:'titlebar',
-                title:'Search a Doc',
-                docked:'top'
+            {   
+                docked: 'top',
+                xtype: 'toolbar',
+                layout:'hbox',
+                items:
+                [
+                    {
+                        xtype:'button',
+                        iconCls:'more',
+                        flex:2,
+                        style:'margin:10px 10px',
+                        id:'homepage_menu',
+                         handler: function() {
+                            Ext.Viewport.toggleMenu('left');
+                        }
+                    },
+                    {
+                        xtype:'label',
+                        html:"<div style='padding:13px 5px'>Search A Doc</div>",
+                        flex:10,
+                    },
+                                  ]
+              
             },
             {
                 xtype:'button',
